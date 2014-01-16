@@ -1,0 +1,60 @@
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
+  <soap:Body>
+    <ns1:ItemPriceRequest xmlns:ns1="http://xmlns.irco.com/WebtopssItemPriceProvABCSImpl">
+      <ControlArea>
+        <PartnerCode>WEBTOPSS</PartnerCode>
+        <InstanceName>WEBDEV</InstanceName>
+        <RequestType>PROCESS</RequestType>
+        <MessageID>E3C3E45006B0489CE0430B63560AA260</MessageID>
+      </ControlArea>
+      <DataArea>
+        <ItemPrice>
+          <ConfiguredItem>TSD180F3R0A**000000000000000000000000000</ConfiguredItem>
+          <ProductCode>0463</ProductCode>
+          <ProductFamily>2006337</ProductFamily>
+          <PricelistName></PricelistName>
+          <ListPrice>150</ListPrice>
+          <UOM>EA</UOM>
+          <POA>SAMPLE_POA</POA>
+          <StartDate>2013-09-27T17:52:47</StartDate>
+          <EndDate></EndDate>
+          <AccessoryFlag>N</AccessoryFlag>
+          <AccessoryItem></AccessoryItem>
+          <ItemPriceFetch>
+            <Header>
+              <SourceHeaderRef>1876543</SourceHeaderRef>
+              <OperatingUnitCode>USOUUSDRS</OperatingUnitCode>
+              <BusinessUnit />
+              <PricingDate>2013-10-02</PricingDate>
+              <CustomerNumber>35803</CustomerNumber>
+              <SoldToSite>268417</SoldToSite>
+              <CurrencyCode>USD</CurrencyCode>
+              <CheckType>PRICE</CheckType>
+              <Line>
+                <SourceLineRef />
+                <PartNumber />
+                <Quantity>1</Quantity>
+                <UOM />
+                <SupplierNumber />
+                <ManufacturingLocation />
+                <DivisionCode />
+                <OrderType />
+                <ShipmentPriority />
+                <ShipFrom />
+                <LineCategory />
+                <FreightTerms />
+                <SalesChannel />
+                <BillTo />
+                <OrderSource />
+                <ModifierNumber />
+                <PricingAttribute1 />
+                <ModelNumber />
+                <ItemType />
+              </Line>
+            </Header>
+          </ItemPriceFetch>
+        </ItemPrice>
+      </DataArea>
+    </ns1:ItemPriceRequest>
+  </soap:Body>
+</soap:Envelope>

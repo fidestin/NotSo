@@ -1,0 +1,81 @@
+<xsd:schema elementFormDefault="unqualified" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+   <xsd:element name="ItemPriceRequest">
+      <xsd:complexType>
+         <xsd:sequence>
+            <xsd:element name="ControlArea">
+               <xsd:complexType>
+                  <xsd:sequence>
+                     <xsd:element name="PartnerCode" type="xsd:string" nillable="false" maxOccurs="1" minOccurs="0"/>
+                     <xsd:element name="InstanceName" type="xsd:string"/>
+                     <xsd:element name="RequestType" type="xsd:string"/>
+                  </xsd:sequence>
+               </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="DataArea">
+               <xsd:complexType>
+                  <xsd:sequence>
+                     <xsd:element name="ItemPrice">
+                        <xsd:complexType>
+                           <xsd:sequence>
+                              <xsd:element name="ConfiguredItem" type="xsd:string" nillable="false" maxOccurs="1" minOccurs="0"/>
+                              <xsd:element name="ProductCode" type="xsd:string" nillable="false" maxOccurs="1" minOccurs="0"/>
+                              <xsd:element name="ProductFamily" type="xsd:string" nillable="false" maxOccurs="1" minOccurs="0"/>
+                              <xsd:element name="PricelistName" type="xsd:string"/>
+                              <xsd:element name="ListPrice" type="xsd:string" nillable="false" maxOccurs="1" minOccurs="0"/>
+                              <xsd:element name="UOM" type="xsd:string"/>
+                              <xsd:element name="POA" type="xsd:string"/>
+                              <xsd:element name="StartDate" type="xsd:string"/>
+                              <xsd:element name="EndDate" type="xsd:string"/>
+                              <xsd:element name="ItemPriceFetch">
+                                 <xsd:complexType>
+                                    <xsd:sequence>
+                                       <xsd:element name="Header">
+                                          <xsd:complexType>
+                                             <xsd:sequence>
+                                                <xsd:element name="SourceHeaderRef" type="xsd:string"/>
+                                                <xsd:element name="OperatingUnitCode" type="xsd:string"/>
+                                                <xsd:element name="BusinessUnit" type="xsd:string"/>
+                                                <xsd:element name="PricingDate" type="xsd:string"/>
+                                                <xsd:element name="CustomerNumber" type="xsd:string"/>
+                                                <xsd:element name="SoldToSite" type="xsd:string"/>
+                                                <xsd:element name="CurrencyCode" type="xsd:string"/>
+                                                <xsd:element name="CheckType" type="xsd:string"/>
+                                                <xsd:element name="Line">
+                                                   <xsd:complexType>
+                                                      <xsd:sequence>
+                                                         <xsd:element name="SourceLineRef" type="xsd:string"/>
+                                                         <xsd:element name="PartNumber" type="xsd:string"/>
+                                                         <xsd:element name="Quantity" type="xsd:string"/>
+                                                         <xsd:element name="UOM" type="xsd:string"/>
+                                                         <xsd:element name="SupplierNumber" type="xsd:string"/>
+                                                         <xsd:element name="ManufacturingLocation" type="xsd:string"/>
+                                                         <xsd:element name="DivisionCode" type="xsd:string"/>
+                                                         <xsd:element name="OrderType" type="xsd:string"/>
+                                                         <xsd:element name="ShipmentPriority" type="xsd:string"/>
+                                                         <xsd:element name="ShipFrom" type="xsd:string"/>
+                                                         <xsd:element name="LineCategory" type="xsd:string"/>
+                                                         <xsd:element name="FreightTerms" type="xsd:string"/>
+                                                         <xsd:element name="SalesChannel" type="xsd:string"/>
+                                                         <xsd:element name="BillTo" type="xsd:string"/>
+                                                         <xsd:element name="OrderSource" type="xsd:string"/>
+                                                         <xsd:element name="ModifierNumber" type="xsd:string"/>
+                                                         <xsd:element name="PricingAttribute1" type="xsd:string"/>
+                                                      </xsd:sequence>
+                                                   </xsd:complexType>
+                                                </xsd:element>
+                                             </xsd:sequence>
+                                          </xsd:complexType>
+                                       </xsd:element>
+                                    </xsd:sequence>
+                                 </xsd:complexType>
+                              </xsd:element>
+                           </xsd:sequence>
+                        </xsd:complexType>
+                     </xsd:element>
+                  </xsd:sequence>
+               </xsd:complexType>
+            </xsd:element>
+         </xsd:sequence>
+      </xsd:complexType>
+   </xsd:element>
+</xsd:schema>

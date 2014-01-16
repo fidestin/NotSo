@@ -1,0 +1,97 @@
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace TOPSS.ProdData
+{
+	/// <summary>
+	/// 
+	/// </summary>
+	public enum OrderNumberGenType
+	{
+		None,
+		ModelNumber,
+		Upfgs,
+		Split,
+        NotCurrentlyOrderable
+	};
+
+	/// <summary>
+	/// 
+	/// </summary>
+	public class ProductPricing
+	{
+		public ProductPricing(OrderNumberGenType orderNumberGenerationType, string businessSegment, Dictionary<string, SplitTypePricing> typePricing)
+		{
+			OrderNumberGenerationType = orderNumberGenerationType;
+			BusinessSegment = businessSegment;
+			TypePricing = typePricing;
+		}
+
+		public readonly OrderNumberGenType OrderNumberGenerationType;
+		public readonly string BusinessSegment;
+		public readonly Dictionary<string, SplitTypePricing> TypePricing;
+	}
+
+	/// <summary>
+	/// 
+	/// </summary>
+	public class SplitTypePricing
+	{
+		public SplitTypePricing(Dictionary<FieldMetadata, FieldPricing> fieldPricing, string productCode, FieldMetadata orderNumberField)
+		{
+			this.FieldPricing = fieldPricing;
+			this.ProductCode = productCode;
+			this.OrderNumberField = orderNumberField;
+		}
+
+		public readonly Dictionary<FieldMetadata, FieldPricing> FieldPricing;
+		public readonly string ProductCode;
+		public readonly FieldMetadata OrderNumberField;
+	}
+
+	/// <summary>
+	/// 
+	/// </summary>
+	public class FieldPricing
+	{
+		public FieldPricing(List<OptionPricing> Options, string Description, bool IsMultGroupSearch, bool HasSpecialPricing)
+		{
+			this.Options = Options;
+			this.Description = Description;
+			this.IsMultGroupSearch = IsMultGroupSearch;
+         this.HasSpecialPricing = HasSpecialPricing;
+		}
+
+		public readonly List<OptionPricing> Options;
+		public readonly string Description;
+		public readonly bool IsMultGroupSearch;
+      public readonly bool HasSpecialPricing;
+	}
+
+	/// <summary>
+	/// 
+	/// </summary>
+	public class OptionPricing
+	{
+      public OptionPricing(OptionMetadata Option, string MultGroupCode, string ProductCode, bool IsSpecialPricing, long SpecialPricingVpcId, long SpecialPricingSiId)
+		{
+			this.Option = Option;
+			this.MultGroupCode = MultGroupCode;
+         this.ProductCode = ProductCode;
+         this.IsSpecialPricing = IsSpecialPricing;
+         this.SpecialPricingVpcId = SpecialPricingVpcId;
+         this.SpecialPricingSiId = SpecialPricingSiId;
+		}
+
+		public readonly OptionMetadata Option;
+		public readonly string MultGroupCode;
+      public readonly string ProductCode;
+      public readonly bool IsSpecialPricing;
+      public readonly long SpecialPricingVpcId;
+      public readonly long SpecialPricingSiId;
+	}
+}

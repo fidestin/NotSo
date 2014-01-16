@@ -1,0 +1,47 @@
+<?xml version="1.0"?>
+<ItemPriceRequest>
+	<ConfiguredItem>YSC048E1ELA**000000000000000000000000000</ConfiguredItem>
+	<ProductCode>513</ProductCode>
+	<ProductFamily>2004925</ProductFamily>
+	<PricelistName></PriceListName>
+	<ListPrice>6501</ListPrice>
+	<UOM></UOM>
+	<POA></POA>
+	<StartDate>2013-08-18T17:52:47</StartDate>
+	<EndDate>2013-08-18T17:52:47</EndDate>
+	<AccessoryFlag>0</AccessoryFlag>
+	<AccessoryItem></AccessiryItem>
+	<ItemPriceFetch>
+		<Header>
+		  <SourceHeaderRef>955995F0-92E2-461C-BFB0-D705995998AD</SourceHeaderRef>
+		  <OperatingUnitCode>IEOUEUR</OperatingUnitCode>
+		  <BusinessUnit>PRC</BusinessUnit>
+		  <PricingDate>2013-08-18T17:52:47</PricingDate>
+		  <CustomerNumber>27793</CustomerNumber>
+		  <SoldToSite>9840</SoldToSite>
+		  <CurrencyCode>USD</CurrencyCode>
+		  <CheckType>PRICE</CheckType>
+		</Header>
+		<Line>
+		  <SourceLineRef>F34CFE1B-E8C2-46C6-B1FD-020EA0267651</SourceLineRef>
+		  <PartNumber>YSC036E4EMA00TU</PartNumber>
+		  <Quantity>1</Quantity>
+		  <UOM>EACH</UOM>
+		  <SupplierNumber />
+		  <ManufacturingLocation />
+		  <DivisionCode />
+		  <OrderType />
+		  <ShipmentPriority />
+		  <ShipFrom />
+		  <LineCategory />
+		  <FreightTerms />
+		  <SalesChannel />
+		  <BillTo />
+		  <OrderSource />
+		  <ModifierNumber />
+		  <PricingAttribute1 />
+		  <ModelNumber />
+		  <ItemType />
+		</Line>
+	</ItemPriceFetch>
+</ItemPrice>

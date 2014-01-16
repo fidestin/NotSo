@@ -1,0 +1,53 @@
+-Pricing ModelNumber : YSD150F3RHA0000 ServiceNumber : YSD150F3RHA**000000000000000000000000000
+
+Base Unit:
+------------------ 
+ListPrice : 17484
+
+Request :
+costCenter:9840
+modelNumber:YSD150F3RHA**000000000000000000000000000
+productData.ProductFamilyId:2006347
+multGrpCode:467A
+
+Response:
+BuyPriceMultiplier : 0.336
+price_type:CALCULATED
+rounding :2
+
+BuyPrice : 5874.6
+
+
+Relia :
+----------
+ListPrice :434
+
+Request
+
+
+Response
+BuyPriceMultiplier : 0.336
+price_type:CALCULATED
+rounding :2
+
+BuyPrice : 146
+
+
+Accessory
+-------------------
+ListPrice : 519
+
+Request:
+costCenter : 9840
+ProductTag : LAD*
+ProdFamilyID : 2006347
+
+Response:
+BuyPriceMultliplier: 0.344
+price_type:CALCULATED
+rounding :2
+
+BuyPrice : 179
+
+
+Unit + Relia + Accessory = 5875+146+179=6200

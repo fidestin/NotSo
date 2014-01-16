@@ -1,0 +1,19 @@
+1. replaced. Add R12Smart from a proper folder
+ C:\TOPSS\topssmvc\Code\Common.sln      
+	"R12Smart", "..\..\..\Users\bmcardle\Documents\Visual Studio 2012\Projects\R12Smart\R12Smart\R12Smart.csproj", "{31557D3D-A051-4F96-8DF3-4FFA8CEFF8FB}"
+EndProject
+
+
+2.  C:\TOPSS\topssmvc\Code\MVC\MVC.csproj    
+	Add reference to this project - relocate to a proper webTOPSS folder
+	
+	
+3.  C:\TOPSS\topssmvc\Code\MVC\Web.config    
+	add binding and other stuff....
+	
+4.     C:\TOPSS\topssmvc\Code\ResultPricing\ResultPrice.cs        
+	Added call to PriceProxy
+	
+5.  C:\TOPSS\topssmvc\Code\ResultPricing\ResultPricingBackend.csproj               
+	Added proxy project
+	

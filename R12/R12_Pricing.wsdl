@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<wsdl:definitions
+     name="WebtopssItemPriceProvABCSImpl"
+     targetNamespace="http://xmlns.irco.com/WebtopssItemPriceProvABCSImpl"
+     xmlns:ns2="http://xmlns.irco.com/EnterpriseObjects/Core/Common/V1"
+     xmlns:ns1="http://xmlns.irco.com/WebtopssItemPriceProvABCSImpl"
+     xmlns:plnk="http://schemas.xmlsoap.org/ws/2003/05/partner-link/"
+     xmlns:client="http://xmlns.irco.com/WebtopssItemPriceProvABCSImpl"
+     xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+     xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+    >
+    <wsdl:documentation>
+        <abstractWSDL>http://igrexanwh002ca01.corp.irco.com:11002/soa-infra/services/EBS_OM/WebtopssItemPriceProvABCSImpl!1.0/WebtopssItemPriceProvABCSImpl.wsdl</abstractWSDL>
+    </wsdl:documentation>
+    <plnk:partnerLinkType name="WebtopssItemPriceProvABCSImpl">
+        <plnk:role name="WebtopssItemPriceProvABCSImplProvider">
+            <plnk:portType name="ns1:WebtopssItemPriceProvABCSImpl"/>
+        </plnk:role>
+    </plnk:partnerLinkType>
+    <wsdl:types>
+        <schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:ns1="http://xmlns.irco.com/WebtopssItemPriceProvABCSImpl"
+             xmlns:plnk="http://schemas.xmlsoap.org/ws/2003/05/partner-link/" xmlns:client="http://xmlns.irco.com/WebtopssItemPriceProvABCSImpl"
+             xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:ns2="http://xmlns.irco.com/EnterpriseObjects/Core/Common/V1">
+            <import namespace="http://xmlns.irco.com/WebtopssItemPriceProvABCSImpl" schemaLocation="http://igrexanwh002ca01.corp.irco.com:11002/soa-infra/services/EBS_OM/WebtopssItemPriceProvABCSImpl/webtopssitempriceprovabcsimpl_client_ep?XSD=xsd/WebtopssItemPriceProvABCSImpl.xsd"/>
+        </schema>
+        <xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:ns1="http://xmlns.irco.com/WebtopssItemPriceProvABCSImpl"
+             xmlns:plnk="http://schemas.xmlsoap.org/ws/2003/05/partner-link/" xmlns:client="http://xmlns.irco.com/WebtopssItemPriceProvABCSImpl"
+             xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:ns2="http://xmlns.irco.com/EnterpriseObjects/Core/Common/V1">
+            <xsd:import namespace="http://xmlns.irco.com/WebtopssItemPriceProvABCSImpl" schemaLocation="http://igrexanwh002ca01.corp.irco.com:11002/soa-infra/services/EBS_OM/WebtopssItemPriceProvABCSImpl/webtopssitempriceprovabcsimpl_client_ep?XSD=xsd/eBSWebtopssItemPricerequest.xsd"/>
+        </xsd:schema>
+        <xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:ns1="http://xmlns.irco.com/WebtopssItemPriceProvABCSImpl"
+             xmlns:plnk="http://schemas.xmlsoap.org/ws/2003/05/partner-link/" xmlns:client="http://xmlns.irco.com/WebtopssItemPriceProvABCSImpl"
+             xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:ns2="http://xmlns.irco.com/EnterpriseObjects/Core/Common/V1">
+            <xsd:import namespace="http://xmlns.irco.com/WebtopssItemPriceProvABCSImpl" schemaLocation="http://igrexanwh002ca01.corp.irco.com:11002/soa-infra/services/EBS_OM/WebtopssItemPriceProvABCSImpl/webtopssitempriceprovabcsimpl_client_ep?XSD=xsd/eBSWebtopssItemPriceresponse.xsd"/>
+        </xsd:schema>
+        <xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:ns2="http://xmlns.irco.com/EnterpriseObjects/Core/Common/V1"
+             xmlns:ns1="http://xmlns.irco.com/WebtopssItemPriceProvABCSImpl" xmlns:plnk="http://schemas.xmlsoap.org/ws/2003/05/partner-link/"
+             xmlns:client="http://xmlns.irco.com/WebtopssItemPriceProvABCSImpl" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+            <xsd:include schemaLocation="http://igrexanwh002ca01.corp.irco.com:11002/soa-infra/services/EBS_OM/WebtopssItemPriceProvABCSImpl/webtopssitempriceprovabcsimpl_client_ep?XSD=xsd/XXINTInput.xsd"/>
+        </xsd:schema>
+        <xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:ns2="http://xmlns.irco.com/EnterpriseObjects/Core/Common/V1"
+             xmlns:ns1="http://xmlns.irco.com/WebtopssItemPriceProvABCSImpl" xmlns:plnk="http://schemas.xmlsoap.org/ws/2003/05/partner-link/"
+             xmlns:client="http://xmlns.irco.com/WebtopssItemPriceProvABCSImpl" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+            <xsd:import namespace="http://xmlns.irco.com/EnterpriseObjects/Core/Common/V1" schemaLocation="http://igrexanwh002ca01.corp.irco.com:11002/soa-infra/services/EBS_OM/WebtopssItemPriceProvABCSImpl/apps/irsmart/FoundationObjectLibrary/EnterpriseCore.xsd"/>
+        </xsd:schema>
+    </wsdl:types>
+    <wsdl:message name="WebtopssItemPriceProvABCSImplRequestMessage">
+        <wsdl:part name="payload" element="ns1:ItemPriceRequest"/>
+    </wsdl:message>
+    <wsdl:message name="WebtopssItemPriceProvABCSImplResponseMessage">
+        <wsdl:part name="payload" element="ns1:ItemPriceResponse"/>
+    </wsdl:message>
+    <wsdl:portType name="WebtopssItemPriceProvABCSImpl">
+        <wsdl:operation name="process">
+            <wsdl:input message="ns1:WebtopssItemPriceProvABCSImplRequestMessage"/>
+            <wsdl:output message="ns1:WebtopssItemPriceProvABCSImplResponseMessage"/>
+        </wsdl:operation>
+    </wsdl:portType>
+    <wsdl:binding name="WebtopssItemPriceProvABCSImplBinding" type="ns1:WebtopssItemPriceProvABCSImpl">
+        <soap:binding transport="http://schemas.xmlsoap.org/soap/http"/>
+        <wsdl:operation name="process">
+            <soap:operation style="document" soapAction="process"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+    </wsdl:binding>
+    <wsdl:service name="webtopssitempriceprovabcsimpl_client_ep">
+        <wsdl:port name="WebtopssItemPriceProvABCSImpl_pt" binding="ns1:WebtopssItemPriceProvABCSImplBinding">
+            <soap:address location="http://igrexanwh002ca01.corp.irco.com:11002/soa-infra/services/EBS_OM/WebtopssItemPriceProvABCSImpl/webtopssitempriceprovabcsimpl_client_ep"/>
+        </wsdl:port>
+    </wsdl:service>
+</wsdl:definitions>

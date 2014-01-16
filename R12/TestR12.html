@@ -1,0 +1,44 @@
+<HTML>
+<HEAD>
+	<TITLE>Testing R12 Pricing Interface</TITLE>
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+	
+</HEAD>
+<SCRIPT>
+	LoadPointsStore=function(){
+		try{
+				var customerID= $('#customerID').val();
+				  var params="{customerID:'" + customerID + "'}";
+				  console.log('Loading points for customer '+customerID);
+				  console.log('ToolbarDemo.views.LoadPointsStore');
+				  $.ajax({
+						type:"POST",
+						data:params,
+						dataType:"json",    
+						contentType: "application/json; charset=utf-8",
+						url:"http://www.fidestin.com/loya/Service1.asmx/CustomersPointsDetail",
+						success:function(result) {
+										var resultText=result[0].storename + '-'+ result[0].points;
+										$('#resultBox').val(resultText);
+										
+						},
+						error:function(){
+							debugalert('Error in LoadPointsStore');
+							$(document).ajaxError(function(e, xhr, settings, exception) { 
+								debugalert('error in: ' + settings.url + ' \n'+'error:\n' + xhr.responseText ); 
+								}); 
+						}
+					})      
+			 }		
+			catch (b){
+				alert('Error in LoadPointsStore ' + b); 
+			}		
+	}
+</SCRIPT>
+<BODY>
+	<input type="textbox" id="customerID" value="388" />
+	<input type="button" value="Fire Interface" onclick="LoadPointsStore();" </input>
+	<input type="textbox" id="resultBox" value="waiting..." />
+	<div id="message"></div>
+</BODY>
+</HTML>

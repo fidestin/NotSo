@@ -1,0 +1,109 @@
+<xsd:schema elementFormDefault="unqualified" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+   <xsd:element name="ItemPriceResponse">
+      <xsd:complexType>
+         <xsd:sequence>
+            <xsd:element name="ControlArea">
+               <xsd:complexType>
+                  <xsd:sequence>
+                     <xsd:element name="InstanceName" type="xsd:string" nillable="false" maxOccurs="1" minOccurs="0"/>
+                     <xsd:element name="System" type="xsd:string" nillable="false" maxOccurs="1" minOccurs="0"/>
+                     <xsd:element name="MessageID" type="xsd:string" nillable="false" maxOccurs="1" minOccurs="0"/>
+                     <xsd:element name="ExternalMessageID" type="xsd:string"/>
+                     <xsd:element name="Status" type="xsd:string"/>
+                     <xsd:element name="Message" type="xsd:string"/>
+                  </xsd:sequence>
+               </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="DataArea">
+               <xsd:complexType>
+                  <xsd:sequence>
+                     <xsd:element name="ItemPrice">
+                        <xsd:complexType>
+                           <xsd:sequence>
+                              <xsd:element name="ConfiguredItem" type="xsd:string" nillable="false" maxOccurs="1" minOccurs="0"/>
+                              <xsd:element name="ItemMatchingStatus" type="xsd:string"/>
+                              <xsd:element name="ItemMatchingMessage" type="xsd:string"/>
+                              <xsd:element name="ItemNumber" type="xsd:string" nillable="false" maxOccurs="1" minOccurs="0"/>
+                              <xsd:element name="ItemCreationStatus" type="xsd:string"/>
+                              <xsd:element name="ItemCreationMessage" type="xsd:string"/>
+                              <xsd:element name="PricelistName" type="xsd:string"/>
+                              <xsd:element name="ListPrice" type="xsd:string" nillable="false" maxOccurs="1" minOccurs="0"/>
+                              <xsd:element name="UOM" type="xsd:string"/>
+                              <xsd:element name="StartDate" type="xsd:string"/>
+                              <xsd:element name="EndDate" type="xsd:string"/>
+                              <xsd:element name="PriceListStatus" type="xsd:string"/>
+                              <xsd:element name="PriceListOperation" type="xsd:string"/>
+                              <xsd:element name="PriceListId" type="xsd:string"/>
+                              <xsd:element name="PriceListMessage" type="xsd:string"/>
+                              <xsd:element name="ItemPriceFetch">
+                                 <xsd:complexType>
+                                    <xsd:sequence>
+                                       <xsd:element name="Header">
+                                          <xsd:complexType>
+                                             <xsd:sequence>
+                                                <xsd:element name="SourceHeaderRef" type="xsd:string"/>
+                                                <xsd:element name="CheckType" type="xsd:string"/>
+                                                <xsd:element name="Line">
+                                                   <xsd:complexType>
+                                                      <xsd:sequence>
+                                                         <xsd:element name="SourceLineRef" type="xsd:string"/>
+                                                         <xsd:element name="Status" type="xsd:string"/>
+                                                         <xsd:element name="Message" type="xsd:string"/>
+                                                         <xsd:element name="ItemNumber" type="xsd:string"/>
+                                                         <xsd:element name="Quantity" type="xsd:integer"/>
+                                                         <xsd:element name="ListPrice">
+                                                            <xsd:complexType>
+                                                               <xsd:simpleContent>
+                                                                  <xsd:extension base="xsd:integer">
+                                                                     <xsd:attribute name="CurrencyCode" type="xsd:string"/>
+                                                                  </xsd:extension>
+                                                               </xsd:simpleContent>
+                                                            </xsd:complexType>
+                                                         </xsd:element>
+                                                         <xsd:element name="AdjustedListPrice">
+                                                            <xsd:complexType>
+                                                               <xsd:simpleContent>
+                                                                  <xsd:extension base="xsd:integer">
+                                                                     <xsd:attribute name="CurrencyCode" type="xsd:string"/>
+                                                                  </xsd:extension>
+                                                               </xsd:simpleContent>
+                                                            </xsd:complexType>
+                                                         </xsd:element>
+                                                         <xsd:element name="MaterialCost">
+                                                            <xsd:complexType>
+                                                               <xsd:simpleContent>
+                                                                  <xsd:extension base="xsd:integer">
+                                                                     <xsd:attribute name="CurrencyCode" type="xsd:string"/>
+                                                                  </xsd:extension>
+                                                               </xsd:simpleContent>
+                                                            </xsd:complexType>
+                                                         </xsd:element>
+                                                         <xsd:element name="StandardCost">
+                                                            <xsd:complexType>
+                                                               <xsd:simpleContent>
+                                                                  <xsd:extension base="xsd:integer">
+                                                                     <xsd:attribute name="CurrencyCode" type="xsd:string"/>
+                                                                  </xsd:extension>
+                                                               </xsd:simpleContent>
+                                                            </xsd:complexType>
+                                                         </xsd:element>
+                                                         <xsd:element name="UOM" type="xsd:string"/>
+                                                      </xsd:sequence>
+                                                   </xsd:complexType>
+                                                </xsd:element>
+                                             </xsd:sequence>
+                                          </xsd:complexType>
+                                       </xsd:element>
+                                    </xsd:sequence>
+                                 </xsd:complexType>
+                              </xsd:element>
+                           </xsd:sequence>
+                        </xsd:complexType>
+                     </xsd:element>
+                  </xsd:sequence>
+               </xsd:complexType>
+            </xsd:element>
+         </xsd:sequence>
+      </xsd:complexType>
+   </xsd:element>
+</xsd:schema>

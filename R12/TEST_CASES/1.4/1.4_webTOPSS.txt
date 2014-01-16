@@ -1,0 +1,42 @@
+- Pricing Test #1.4
+- August 30th 2013
+- Brendan McArdle
+- Pricing ModelNumber : YSC048E1ELA0000 ServiceNumber : YSC048E1ELA**000000000000000000000000000
+- Precedent (Y4C)
+- 3-10 Ton R410A PKGD Unitary
+
+Base Unit:
+------------------ 
+ListPrice : 6501
+
+Request :
+costCenter:9840
+modelNumber:YSC048E1ELA**000000000000000000000000000
+multGrpCode:513B
+productData.ProductFamilyId:2004925
+
+Response:
+BuyPriceMultiplier : 0.333
+price_type:CALCULATED
+rounding :2
+
+BuyPrice : 6501*0.333=2165.0
+
+Accessory
+-----------
+List Price : 419
+
+Request : 
+costCenter: 9840
+AccessoryProductTag : 0289
+ProdFamilyID : 2004925
+
+Response:
+AccyBuyPriceMultiplier : 0.344
+
+BuyPrice = 419*0.344=144
+
+Total : 2165+144=$2309
+
+
+

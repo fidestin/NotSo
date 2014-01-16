@@ -1,0 +1,47 @@
+<ItemPriceResponse>
+   <ControlArea>
+      <InstanceName>IREBSDEV</InstanceName>
+      <System>EBS</System>
+      <MessageID>E3C2A2ACDBEBAECBE0430B63560A69F8</MessageID>
+      <Status>SUCCESS</Status>
+      <Message>Request Processed Successfully</Message>
+      <ExternalMessageID>E5C2A2ACDBEBAECBE0430B63560A69F8</ExternalMessageID>
+   </ControlArea>
+   <DataArea>
+      <ItemPrice>
+         <ConfiguredItem>1234567890098765432112345678900987654321</ConfiguredItem>
+         <ItemMatchingStatus>SUCCESS</ItemMatchingStatus>
+         <ItemMatchingMessage>Matching Exists</ItemMatchingMessage>
+         <ItemNumber>121345789S</ItemNumber>
+         <ItemCreationStatus>SUCCESS</ItemCreationStatus>
+         <ItemCreationMessage>Item Created Successfully</ItemCreationMessage>
+         <PricelistName/>
+         <ListPrice/>
+         <UOM/>
+         <StartDate>2013-08-18T17:52:47</StartDate>
+         <EndDate>2013-08-18T17:52:47</EndDate>
+         <PriceListStatus>SUCCESS</PriceListStatus>
+         <PriceListOperation>CREATE</PriceListOperation>
+         <PriceListId/>
+         <PriceListMessage>Price List Created Successfully</PriceListMessage>
+         <ItemPriceFetch>
+            <Header>
+               <SourceHeaderRef>1876543</SourceHeaderRef>
+               <CheckType>PRICE</CheckType>
+               <Line>
+                  <SourceLineRef>8765432</SourceLineRef>
+                  <Status>SUCCESS</Status>
+                  <Message>Line Request Successfully Processed</Message>
+                  <ItemNumber>1020950</ItemNumber>
+                  <Quantity>1</Quantity>
+                  <ListPrice CurrencyCode="USD">15</ListPrice>
+                  <AdjustedListPrice CurrencyCode="USD">10</AdjustedListPrice>
+                  <MaterialCost CurrencyCode="USD">15</MaterialCost>
+                  <StandardCost CurrencyCode="USD">10</StandardCost>
+                  <UOM>EACH</UOM>
+               </Line>
+            </Header>
+         </ItemPriceFetch>
+      </ItemPrice>
+   </DataArea>
+</ItemPriceResponse>

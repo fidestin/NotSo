@@ -1,0 +1,44 @@
+<HTML>
+<HEAD>
+	<TITLE>Testing R12 Pricing Interface</TITLE>
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+	
+</HEAD>
+<SCRIPT>
+	LoadWeather=function(){
+		try{
+				//La Crosse : 54601
+				var zip_ID= $('#zipID').val();
+				  var params="{ZIP:'" + zip_ID + "'}";
+				  console.log('Loading weather for customer '+zip_ID);
+				  $.ajax({
+						type:"POST",
+						data:params,
+						dataType:"json",    
+						contentType: "application/json; charset=utf-8",
+						url:"http://wsf.cdyne.com/WeatherWS/Weather.asmx/GetCityWeatherByZIP",
+						success:function(result) {
+										var resultText=result[0].storename + '-'+ result[0].points;
+										$('#resultBox').val(resultText);
+										
+						},
+						error:function(){
+							debugalert('Error in LoadWeather');
+							$(document).ajaxError(function(e, xhr, settings, exception) { 
+								debugalert('error in: ' + settings.url + ' \n'+'error:\n' + xhr.responseText ); 
+								}); 
+						}
+					})      
+			 }		
+			catch (b){
+				alert('Error in LoadWeather ' + b); 
+			}		
+	}
+</SCRIPT>
+<BODY>
+	<input type="textbox" id="zipID" value="388" />
+	<input type="button" value="Fire Interface" onclick="LoadWeather();" </input>
+	<input type="textbox" id="resultBox" value="waiting..." />
+	<div id="message"></div>
+</BODY>
+</HTML>

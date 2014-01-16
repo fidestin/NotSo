@@ -1,0 +1,47 @@
+<?xml version="1.0"?>
+<ItemPrice>
+	<ConfiguredItem></ConfiguredItem>
+	<ProductCode></ProductCode>
+	<ProductFamily></ProductFamily>
+	<PricelistName></PriceListName>
+	<ListPrice></ListPrice>
+	<UOM></UOM>
+	<POA></POA>
+	<StartDate></StartDate>
+	<EndDate></EndDate>
+	<AccessoryFlag></AccessoryFlag>
+	<AccessoryItem></AccessiryItem>
+	<ItemPriceFetch>
+		<Header>
+		  <SourceHeaderRef>955995F0-92E2-461C-BFB0-D705995998AD</SourceHeaderRef>
+		  <OperatingUnitCode>IEOUEUR</OperatingUnitCode>
+		  <BusinessUnit>PRC</BusinessUnit>
+		  <PricingDate>2013-08-18T17:52:47</PricingDate>
+		  <CustomerNumber>27793</CustomerNumber>
+		  <SoldToSite>9690</SoldToSite>
+		  <CurrencyCode>USD</CurrencyCode>
+		  <CheckType>PRICE</CheckType>
+		</Header>
+		<Line>
+		  <SourceLineRef>64A513DD-F8FB-4246-8732-F67B32C1303A</SourceLineRef>
+		  <PartNumber>YSC036E4EMA00TU</PartNumber>
+		  <Quantity>1</Quantity>
+		  <UOM>EACH</UOM>
+		  <SupplierNumber />
+		  <ManufacturingLocation />
+		  <DivisionCode />
+		  <OrderType />
+		  <ShipmentPriority />
+		  <ShipFrom />
+		  <LineCategory />
+		  <FreightTerms />
+		  <SalesChannel />
+		  <BillTo />
+		  <OrderSource />
+		  <ModifierNumber />
+		  <PricingAttribute1 />
+		  <ModelNumber />
+		  <ItemType />
+		</Line>
+	</ItemPriceFetch>
+</ItemPrice>

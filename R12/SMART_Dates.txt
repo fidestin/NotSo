@@ -1,0 +1,23 @@
+Brent,
+
+from this below our piece is XXONT1927 - the pricing Interface.
+Trying to make sense of the spreadsheet, especially the Target Testing Date
+Completion of webTOPSS development (Brendan McArdle): 11-Oct
+Functional Testing (Kadigari, Shyam) : 9- Sept
+User Testing (Mandvikar, Shreekant) : 13 - Sept
+
+
+Also, I'm not sure what she means by "when would you be ready to start importing new items?"...
+This refers to another deliverable  : XXONT1950
+XXONT1950 that creates Items/Cross reference/Catalog for a CTO Item from WebTopps is the prerequisite for testing of several downstream integrations.
+"We need to get in touch with the WebTopps contact to know if there are any new items ready to be imported."...?
+
+Currently I am getting a SUCCESS result with a $0 price back from the interface.
+As of yet, I have zero effort on the webTOPSS code itself.
+
+Going to get a clearer picture today on what is happening with the XXONT1927 and let you know what I find out.a
+
+thanks,
+Brendan
+
+

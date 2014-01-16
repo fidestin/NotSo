@@ -1,0 +1,27 @@
+Customer gateway go against that table....
+....ICMs
+	new customer added will be whatever the Oracle ID is going to be...
+	
+	for distributors...ok
+	for DSOs what exactly that means....is there going to be a list of SoldTo...
+	
+	R12
+		Customer Number
+		SoldToSite :
+		
+		PriceList each customer is linked with....
+		
+		Keith DSO? whats 
+		
+		Old configurator had 
+		
+		IWD : list price config to get ON to work up a quote, no buy price multipliers 
+		DSOs : configure to get an ONnch
+		
+		
+		
+		No DSO customers on there - 
+		CustomerMaster DNorm
+		
+		In R12 - Default Branch
+		

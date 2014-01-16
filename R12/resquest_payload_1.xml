@@ -1,0 +1,17 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<ItemPriceResponse><ControlArea><InstanceName>IREBSDEV</InstanceName><SystemName>EBS</SystemName><MessageID>E3C3E45006B0489CE0430B63560AA260</MessageID><Status></Status><Message></Message><ExternalMessageID></ExternalMessageID></ControlArea><DataArea><ItemPrice><ConfiguredItem>YHD150F4RHA**06B0A1A100C7000000000000000</ConfiguredItem><ItemMatchingStatus>EXIST</ItemMatchingStatus><ItemMatchingMessage>Match Exists  Oracle item number for string YHD150F4RHA**06B0A1A100C7000000000000000  is - YHD150F4RHA1GWR*</ItemMatchingMessage><ItemNumber>YHD150F4RHA1GWR*</ItemNumber><ItemCreationStatus></ItemCreationStatus><ItemCreationMessage></ItemCreationMessage><PricelistName></PricelistName><ListPrice>200</ListPrice><UOM>EA</UOM><StartDate>20130911T17:52:47</StartDate><EndDate></EndDate><PriceListStatus></PriceListStatus><PriceListOperation>UPDATE</PriceListOperation><PriceListId></PriceListId><PriceListMessage>l_upd_pl_retmesg</PriceListMessage><ItemPriceFetch><Header><SourceHeaderRef>1876543</SourceHeaderRef><CheckType>PRICE</CheckType><Line><SourceLineRef></SourceLineRef><Status>SUCCESS</Status><Message></Message><ItemNumber>YHD150</ItemNumber><Quantity>1</Quantity><ListPrice>200</ListPrice><AdjustedListPrice>153</AdjustedListPrice><MaterialCost></MaterialCost><StandardCost></StandardCost><UOM>EA</UOM><PricingMultiplier>.765</PricingMultiplier></Line></Header></ItemPriceFetch></ItemPrice></DataArea></ItemPriceResponse>

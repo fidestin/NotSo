@@ -1,0 +1,22 @@
+select  substr(R12_PRICING_CATEGORY,-4,4),P.R12_MODEL_NUMBER,P.R12_PRICING_CATEGORY,P.PRODUCT_CODE,P.* from fdpdb_prod_mast_dn P 
+where R12_PRICING_CATEGORY Is Not NULL
+
+select substr(R12_PRICING_CATEGORY,-4,4) MULTGROUP from fdpdb_prod_mast_dn P where MODEL_NUMBER='BAYECON064B'
+
+
+where R12_PRICING_CATEGORY Is Not NULL
+
+and P.R12_MODEL_NUMBER like 'YSD150FWRZA1%'
+
+select instr(R12_PRICING_CATEGORY,'.') from fdpdb_prod_mast_dn where MODEL_NUMBER like 'YSD150F3RHA0000%'
+
+select substr(R12_PRICING_CATEGORY,instr(R12_PRICING_CATEGORY,'.')) from fdpdb_prod_mast_dn where MODEL_NUMBER like 'YSD150FWRZA1%'
+
+select substr(R12_PRICING_CATEGORY,-4,4),R12_PRICING_CATEGORY from fdpdb_prod_mast_dn 
+where MODEL_NUMBER='YSD150F3RHA0000'
+
+
+where R12_PRICING_CATEGORY Is Not NULL
+
+where MODEL_NUMBER like 'YSD150FWRZA1%'
+
