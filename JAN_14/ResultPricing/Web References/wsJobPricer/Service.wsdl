@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="GetOrderRequired">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="prod_family" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetOrderRequiredResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetOrderRequiredResult" type="tns:ArrayOfAssoc_category" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfAssoc_category">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="assoc_category" nillable="true" type="tns:assoc_category" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="assoc_category">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="vpcID1" type="s:long" />
+          <s:element minOccurs="1" maxOccurs="1" name="vpcID2" type="s:long" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetPriceRequired">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="prod_family" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetPriceRequiredResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetPriceRequiredResult" type="tns:ArrayOfAssoc_category" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ArrayOfAssoc_category" nillable="true" type="tns:ArrayOfAssoc_category" />
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="GetOrderRequiredSoapIn">
+    <wsdl:part name="parameters" element="tns:GetOrderRequired" />
+  </wsdl:message>
+  <wsdl:message name="GetOrderRequiredSoapOut">
+    <wsdl:part name="parameters" element="tns:GetOrderRequiredResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetPriceRequiredSoapIn">
+    <wsdl:part name="parameters" element="tns:GetPriceRequired" />
+  </wsdl:message>
+  <wsdl:message name="GetPriceRequiredSoapOut">
+    <wsdl:part name="parameters" element="tns:GetPriceRequiredResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetOrderRequiredHttpGetIn">
+    <wsdl:part name="prod_family" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetOrderRequiredHttpGetOut">
+    <wsdl:part name="Body" element="tns:ArrayOfAssoc_category" />
+  </wsdl:message>
+  <wsdl:message name="GetPriceRequiredHttpGetIn">
+    <wsdl:part name="prod_family" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetPriceRequiredHttpGetOut">
+    <wsdl:part name="Body" element="tns:ArrayOfAssoc_category" />
+  </wsdl:message>
+  <wsdl:message name="GetOrderRequiredHttpPostIn">
+    <wsdl:part name="prod_family" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetOrderRequiredHttpPostOut">
+    <wsdl:part name="Body" element="tns:ArrayOfAssoc_category" />
+  </wsdl:message>
+  <wsdl:message name="GetPriceRequiredHttpPostIn">
+    <wsdl:part name="prod_family" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetPriceRequiredHttpPostOut">
+    <wsdl:part name="Body" element="tns:ArrayOfAssoc_category" />
+  </wsdl:message>
+  <wsdl:portType name="ServiceSoap">
+    <wsdl:operation name="GetOrderRequired">
+      <wsdl:input message="tns:GetOrderRequiredSoapIn" />
+      <wsdl:output message="tns:GetOrderRequiredSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPriceRequired">
+      <wsdl:input message="tns:GetPriceRequiredSoapIn" />
+      <wsdl:output message="tns:GetPriceRequiredSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="ServiceHttpGet">
+    <wsdl:operation name="GetOrderRequired">
+      <wsdl:input message="tns:GetOrderRequiredHttpGetIn" />
+      <wsdl:output message="tns:GetOrderRequiredHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPriceRequired">
+      <wsdl:input message="tns:GetPriceRequiredHttpGetIn" />
+      <wsdl:output message="tns:GetPriceRequiredHttpGetOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="ServiceHttpPost">
+    <wsdl:operation name="GetOrderRequired">
+      <wsdl:input message="tns:GetOrderRequiredHttpPostIn" />
+      <wsdl:output message="tns:GetOrderRequiredHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPriceRequired">
+      <wsdl:input message="tns:GetPriceRequiredHttpPostIn" />
+      <wsdl:output message="tns:GetPriceRequiredHttpPostOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="ServiceSoap" type="tns:ServiceSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetOrderRequired">
+      <soap:operation soapAction="http://tempuri.org/GetOrderRequired" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPriceRequired">
+      <soap:operation soapAction="http://tempuri.org/GetPriceRequired" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="ServiceSoap12" type="tns:ServiceSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetOrderRequired">
+      <soap12:operation soapAction="http://tempuri.org/GetOrderRequired" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPriceRequired">
+      <soap12:operation soapAction="http://tempuri.org/GetPriceRequired" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="ServiceHttpGet" type="tns:ServiceHttpGet">
+    <http:binding verb="GET" />
+    <wsdl:operation name="GetOrderRequired">
+      <http:operation location="/GetOrderRequired" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPriceRequired">
+      <http:operation location="/GetPriceRequired" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="ServiceHttpPost" type="tns:ServiceHttpPost">
+    <http:binding verb="POST" />
+    <wsdl:operation name="GetOrderRequired">
+      <http:operation location="/GetOrderRequired" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPriceRequired">
+      <http:operation location="/GetPriceRequired" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="Service">
+    <wsdl:port name="ServiceSoap" binding="tns:ServiceSoap">
+      <soap:address location="http://lseusts2470:8088/Service.asmx" />
+    </wsdl:port>
+    <wsdl:port name="ServiceSoap12" binding="tns:ServiceSoap12">
+      <soap12:address location="http://lseusts2470:8088/Service.asmx" />
+    </wsdl:port>
+    <wsdl:port name="ServiceHttpGet" binding="tns:ServiceHttpGet">
+      <http:address location="http://lseusts2470:8088/Service.asmx" />
+    </wsdl:port>
+    <wsdl:port name="ServiceHttpPost" binding="tns:ServiceHttpPost">
+      <http:address location="http://lseusts2470:8088/Service.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

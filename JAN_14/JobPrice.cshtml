@@ -1,0 +1,190 @@
+﻿@model TOPSS.Pricing.JobPricingModel
+@{
+   Layout = null;
+   // string resultIdDiv = string.Format("groupContainerHolder-r-{0}", result.Id);
+
+   double jobListTotal = 0;
+   double jobBuyTotal = 0;
+   string scrollClass = "";
+   string scrollGroupClass = "";
+   if (Model.IncludeHeader)
+   {
+      scrollClass = "scroll-group-container";
+      scrollGroupClass = "scroll-group";
+   }
+}
+
+
+@if (Model.IncludeHeader)
+{
+   <div id="mainArea-header">
+      <div id="mainArea-header-inner">
+         <div class="mainAreaHeaderButtonContainer btn-toolbar">
+            @if (Model.PriceAdmin)
+            {
+               <div id="costCenter">
+                  <strong style="margin-right: 5px">Cost Center:</strong>
+                  @Html.DropDownList("costCenterCodeDDL", Model.CostCenterList, "Select Cost Center", new { onchange = "costCenterChange(this);" })
+               </div>
+               <div id="priceRadioSource">
+                   @Html.RadioButton("useSMART",false,Model.UseSMART, new { onchange = "priceSourceChange(this);"})@Html.Label("TOPSS")
+                   @Html.RadioButton("useSMART",true, Model.UseSMART, new { onchange = "priceSourceChange(this);"})@Html.Label("SMARTs")
+               </div>
+               <div id="priceSource">
+                    <strong style="margin-right: 5px">Price Source:</strong>
+                    <select id="priceSourceDDL" name="priceSourceDDL" onchange="priceSourceChange(this);">
+                        <option value="false">xwebTOPSS</option>
+                        <option value="true">SMART</option>
+                    </select>
+                </div>
+            }
+            <div class="btn-group">
+               <button id="jp-scrollSpyButton" class="btn btn-medium opacity-transition" href="#" data-toggle="clickover" rel="tooltip" tabindex="2" data-original-title="Navigation Panel">
+                  <i class="icon-tasks"></i>
+               </button>
+            </div>
+         </div>
+         @if (ViewBag.NavigationBreadcrumb != null)
+         {
+            <div id="mainArea-breadcrumb">
+               @Html.Partial("NavigationBreadcrumb", (TOPSS.Models.NavigationBreadcrumbModel)ViewBag.NavigationBreadcrumb)
+            </div>
+         }
+      </div>
+   </div>
+}
+
+<div id="mainArea-content">
+
+   @if (Model.IncludeHeader)
+   {
+       if (Model.Results.Count() == 0)
+       {
+           if (ViewBag.NoPriceRequiredFields || ViewBag.DisabledProducts.Length > 0)
+           {
+               if (ViewBag.DisabledProducts.Length > 0)
+               {
+      <h4 class="alert alert-error pagination-centered">Not all selected products (@ViewBag.DisabledProducts) support pricing.</h4>
+               }
+               if (ViewBag.NoPriceRequiredFields)
+               {
+      <div class="alert alert-error pagination-centered">
+         <h4>Results do not have all price required fields filled in.</h4>
+         <img src="@Url.Content("~/images/findresulthelper.png")" class="img-polaroid" style="margin: 10px" />
+         <h4>Navigate to your unit(s) and toggle on "Price"</h4>
+      </div>
+               }
+           }
+           else
+           {
+      <h4 class="alert alert-error pagination-centered">Please mark a result In Job</h4>
+           }
+       }
+       else
+       {
+      <div id="pe-rightPanel">
+         @*navigation list for Pricing OrderNumbers*@
+         <div id="navbarContainer">
+            @* this is used for collapsing *@
+            <div id="pe-navbar" class="scroll-spy">
+               <ul class="nav nav-list">
+                  <li class="">
+                     <div class="scroll-spy-group-header">Results</div>
+                     @* <span class="scroll-spy-group-header pull-right" style="font-weight: 400; color: #808080;">[List Price/Buy Price]</span>*@
+                  </li>
+                  @* list of OrderNumbers goes here *@
+                  @foreach (var result in Model.Results)
+                  {
+                      //var result = priceView.pricedResult;
+                      string listPrice = string.Format("{0:C0}", result.PriceInfo.TotalListPrice * result.Quantity);
+                      string buyPrice = string.Format("{0:C0}", result.PriceInfo.TotalNetBuyPrice * result.Quantity);
+                      string resultIdDiv = string.Format("groupContainerHolder-r-{0}", result.Result.Id);                
+                     <li class="navigationIdentifier btn-badged">
+                        <span class="badge" title="Quantity" style="height: 25px;">@result.Quantity</span>
+                        <a class="badged-item" href="#@resultIdDiv">
+                           <span>@result.Result.Name</span>
+                           @*<span class="pull-right">@result.PriceInfo.OrderNumber     -     @listPrice  - @buyPrice</span>@* @result.PriceInfo.OrderNumber     -     @listPrice  - @buyPrice*@  @*I feel like we want to show them the title of the result here, not the price*@
+                           <div id="ss-@result.Result.Id" class="price-group-header-scrollspy">
+                              <div>@string.Format("{0:C0}", @listPrice)</div>
+                              <div>@string.Format("{0:C0}", @buyPrice)</div>
+                           </div>
+                        </a>
+                     </li>    
+                  }
+               </ul>
+            </div>
+         </div>
+         <div id="total-price">
+            <div class="pull-left">Total Price: </div>
+            <div class="price-group-header">
+               <div>@string.Format("{0:C0}", Model.ListPrice)</div>
+               <div>@string.Format("{0:C0}", Model.NetPrice)</div>
+            </div>
+         </div>
+      </div>
+       }
+   }
+   else if (Model.PriceAdmin)
+   {
+      <div id="costCenter">
+         <strong style="margin-right: 5px">Cost Center:</strong>
+         @Html.DropDownList("costCenterCodeDDL", Model.CostCenterList, "Select Cost Center", new { onchange = "costCenterChange(this);" })
+      </div>
+        <div id="priceRadioSource">
+            @Html.RadioButton("UseSMART",false,Model.UseSMART, new { onchange = "priceSourceChange(this);"})@Html.Label("TOPSS")
+            @Html.RadioButton("UseSMART",true, Model.UseSMART, new { onchange = "priceSourceChange(this);"})@Html.Label("SMARTs")
+        </div>
+        <div id="priceSource">
+            <strong style="margin-right: 5px">Price Source:</strong>
+            <select id="priceSourceDDL" name="priceSourceDDL" onchange="priceSourceChange(this);">
+                <option value="false">ywebTOPSS</option>
+                <option value="true">SMART</option>
+            </select>
+        </div>
+   }
+   <div id="pe-scroll-group-container" class="@scrollClass" data-spy="scroll" data-target="#navbarContainer">
+      @* <div class="fieldGroup">*@
+
+      @*  <div class="priceBuyTitle">Buy</div>
+          <div class="priceListTitle">List</div>                         *@
+
+      @if (Model.Results.Count() == 0 && !Model.IncludeHeader)
+      {
+         <div class="alert alert-error pagination-centered">
+            <h4>The result is missing one or more price required fields.</h4>
+            <img src="@Url.Content("~/images/findresulthelper.png")" class="img-polaroid" style="margin: 10px" />
+            <h4>Navigate to your unit and toggle on "Price"</h4>
+         </div>
+      }
+      else if (Model.Results.Count() > 0 && Model.IncludeHeader)
+      {
+          if (ViewBag.DisabledProducts.Length > 0)
+          {
+         <h4 class="alert alert-error pagination-centered">Not all selected products (@ViewBag.DisabledProducts) support pricing.</h4>
+          }
+          if (ViewBag.NoPriceRequiredFields)
+          {
+         <div class="alert alert-error pagination-centered">
+            <h4>Some Results do not have all price required fields filled in.</h4>
+            <img src="@Url.Content("~/images/findresulthelper.png")" class="img-polaroid" style="margin: 10px" />
+            <h4>Navigate to your unit(s) and toggle on "Price"</h4>
+         </div>
+          }
+      }
+      @foreach (var result in Model.Results)
+      {
+         <section class="@scrollGroupClass">
+            @Html.Partial("ResultPrice", result)
+         </section>
+      }
+   </div>
+</div>
+
+
+<script>
+   $(document).ready(function() {
+      $(".scroll-group").each(function() {
+         $(this).find(".pc-fieldGroup").first().children("h4").before("<div class='price-header'><span class='text-info'>List Price</span><span class='text-success'>Buy Price</span></div>");
+      });
+   });
+</script>

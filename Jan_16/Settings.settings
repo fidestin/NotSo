@@ -1,0 +1,60 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="TOPSS.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="TOPSSConnectionString" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">TOPSSConnectionString</Value>
+    </Setting>
+    <Setting Name="TOPSSGenericsConnectionString" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">TOPSSGenericsConnectionString</Value>
+    </Setting>
+    <Setting Name="UseOldCCPFormat" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="ReSelectViaWebService" Type="System.Boolean" Scope="Application">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="PerformanceUri" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">http://localhost:63793</Value>
+    </Setting>
+    <Setting Name="ProductDataRelativePath" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">..\..\..\CacheFiles</Value>
+    </Setting>
+    <Setting Name="PricePCGConnectionString" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">User Id=toppsproc;Password=toppsprocpw1;Data Source=proa;</Value>
+    </Setting>
+    <Setting Name="LynxConnectionString" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">metadata=res://*/LynxModel.csdl|res://*/LynxModel.ssdl|res://*/LynxModel.msl;provider=Oracle.DataAccess.Client;provider connection string='data source=ESTRNP;password=reiny1;user id=LAHRK'</Value>
+    </Setting>
+    <Setting Name="CorpDomainLDAPPath" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">LDAP://lco-usdc001.corp.irco.com</Value>
+    </Setting>
+    <Setting Name="DrawingPathRelative" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">..\..\..\ProductDrawings</Value>
+    </Setting>
+    <Setting Name="ProductHash" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">dsda73723jjk289adf934k5wkdfksdfgkdfiyozzzz12112343asdf22323351151515</Value>
+    </Setting>
+    <Setting Name="ForceSSL" Type="System.Boolean" Scope="Application">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="ConfiurableTexturePath" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">..\..\..\CacheFiles\CommonData\ConfigurableImages</Value>
+    </Setting>
+    <Setting Name="WpfPassword" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">Simon'sTestPassword</Value>
+    </Setting>
+    <Setting Name="BimFTP" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">ftp://LSEUSAS1654/smsbu/submit/tom/bimdev/</Value>
+    </Setting>
+    <Setting Name="DatabaseConnectionString" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">mongodb://localhost/TOPSS</Value>
+    </Setting>
+    <Setting Name="RevitFilesPath" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">C:\TOPSSMVC\Code\MVC\CacheFiles\StaticGenerics</Value>
+    </Setting>
+    <Setting Name="DDIAConnectionString" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">User Id=diaread;Password=diareadpw;Data Source=ddia;</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

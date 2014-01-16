@@ -1,0 +1,114 @@
+﻿@model TOPSS.Models.UserModel
+@using TOPSS.Common;
+@{
+   Layout = null;
+   string pricingClass = Model.User.HasPriceAccess() ? "" : "hide";
+}
+<div id="modal" class="modal large accountModal scrollable">
+   <div class="modal-header">
+      <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+      <h3>@AccountTranslations.Account</h3>
+   </div>
+   <div class="modal-body scrollable">
+      <form>
+         <fieldset class="control-set">
+            <label class="control-label">@AccountTranslations.Email</label>
+            <div class="control">
+               <input id="emailInput" class="email" type="text" value="@Model.User.Email" />
+            </div>
+         </fieldset>
+         <fieldset class="control-set">
+            <label class="control-label">@AccountTranslations.Language</label>
+            <div class="control">
+               @Html.DropDownList("languageBox", Model.Languages, new { id = "languageBox", @class = "show-tick" })
+            </div>
+         </fieldset>
+         <fieldset class="control-set">
+            <label class="control-label">@AccountTranslations.TimeZone</label>
+            <div class="control">
+               @Html.DropDownList("timeZoneBox", Model.TimeZones, new { id = "timeZoneBox", @class = "show-tick" })
+            </div>
+         </fieldset>
+         <hr />
+         <fieldset class="control-set">
+            <label class="control-label">@AccountTranslations.UomScheme</label>
+            <div class="control">
+               <div class="btn-group control-group" data-toggle="buttons-radio" data-property="SelectedUomScheme" data-clickmethod="true">
+                  <button type="button" data-value="IP" class="btn @(Model.User.Permissions.SelectedUomScheme == "IP" ? "active" : "")">@AccountTranslations.UomScheme_English</button>
+                  <button type="button" data-value="SI" class="btn @(Model.User.Permissions.SelectedUomScheme == "SI" ? "active" : "")">@AccountTranslations.UomScheme_Metric</button>
+               </div>
+               <p class="control-notification">@AccountTranslations.UomSchemeNotification</p>
+            </div>
+         </fieldset>
+         <hr />
+         <fieldset class="control-set">
+            <label class="control-label">@AccountTranslations.DefaultFindResultType</label>
+            <div class="control">
+               <div class="btn-group control-group" data-toggle="buttons-checkbox" data-clickmethod="true">
+                  <button type="button" class="btn user-runResult @(Model.User.Permissions.DefaultRunPerformance ? "active" : "")" data-property="DefaultRunPerformance">@AccountTranslations.DefaultFindResultType_Performance</button>
+                  <button type="button" class="btn user-runResult @pricingClass @(Model.User.Permissions.DefaultRunPrice ? "active" : "")" data-property="DefaultRunPrice">@AccountTranslations.DefaultFindResultType_Price</button>
+                  <button type="button" class="btn user-runResult @(Model.User.Permissions.DefaultRunSubmittal ? "active" : "")" data-property="DefaultRunSubmittal">@AccountTranslations.DefaultFindResultType_Submittal</button>
+               </div>
+               <p class="control-notification">@AccountTranslations.DefaultFindResultTypeNotification</p>
+            </div>
+         </fieldset>
+         <fieldset class="control-set">
+            <label class="control-label">@AccountTranslations.ModelNumberMenu</label>
+            <div class="control">
+               <div id="modelMenuCheckbox" class="btn-group control-group" data-toggle="buttons-radio" data-property="DefaultShowModelNumMenu" data-clickmethod="true">
+                  <button type="button" data-value="true" class="btn @(Model.User.Permissions.DefaultShowModelNumMenu ? "active" : "")">@AccountTranslations.Show</button>
+                  <button type="button" data-value="false" class="btn @(!Model.User.Permissions.DefaultShowModelNumMenu ? "active" : "")">@AccountTranslations.Hide</button>
+               </div>
+               <p class="control-notification">@AccountTranslations.ModelNumberMenuNotification</p>
+            </div>
+         </fieldset>
+           <fieldset class="control-set">
+            <label class="control-label">Price Source SMART</label>
+            <div class="control">
+               <div id="priceSourceCheckbox" class="btn-group control-group" data-toggle="buttons-radio" data-property="DefaultPriceSourceSMART" data-clickmethod="true">
+                  <button type="button" data-value="true" class="btn @(Model.User.Permissions.DefaultPriceSourceSMART ? "active" : "")">SMART</button>
+                  <button type="button" data-value="false" class="btn @(!Model.User.Permissions.DefaultPriceSourceSMART ? "active" : "")">TOPSS</button>
+               </div>
+               <p class="control-notification">Use SMART or TOPSS as the pricing source</p>
+            </div>
+         </fieldset>
+         <fieldset class="control-set">
+            <label class="control-label">@AccountTranslations.InputViewType</label>
+            <div class="control">
+               <div class="btn-group control-group" data-property="DefaultInputViewMap" data-clickmethod="true" data-toggle="buttons-radio">
+                  <button type="button" data-value="@DefaultInputViewMap.Normal.ToString()" class="btn @(Model.User.Permissions.DefaultInputViewMap == DefaultInputViewMap.Normal ? "active" : "")">@AccountTranslations.InputViewType_Standard</button>
+                  <button type="button" data-value="@DefaultInputViewMap.ModelNumber.ToString()" class="btn @(Model.User.Permissions.DefaultInputViewMap == DefaultInputViewMap.ModelNumber ? "active" : "")">@AccountTranslations.InputViewType_ModelNumber</button>
+               </div>
+               <p class="control-notification">@AccountTranslations.InputViewTypeNotification</p>
+            </div>
+         </fieldset>
+
+         @if (Model.User.IsPriceAdmin || !string.IsNullOrWhiteSpace(Model.User.CostCenter))
+         {
+            <hr />
+            <fieldset class="control-set">
+               <label class="control-label">@AccountTranslations.CostCenter</label>
+               <div class="control">
+                  @if (Model.User.IsPriceAdmin)
+                  {
+                     @Html.DropDownList("costCenterBox", Model.CostCenters, new { id = "costCenterBox", @class = "show-tick dropup" })
+                     <p class="control-notification">@AccountTranslations.CostCenterNotification</p>
+                  }
+                  else
+                  {
+                     @Model.User.CostCenter
+                  }
+               </div>
+            </fieldset>
+             
+         }
+      </form>
+   </div>
+   <div class="modal-footer">
+      <div id="user-findResultsTypeError" class="alert alert-error findResultsTypeError" style="display: none;">
+         <small>@AccountTranslations.DefaultFindResultTypeErrorMessage</small>
+      </div>
+      <a id="exitJob" class="btn" tabindex="2" style="float: left" href='/Account/LogOff'>@AccountTranslations.SignOut</a>
+      <button class="btn btn-primary" onclick="$('#modal').modal('hide')">@AccountTranslations.Save</button>
+   </div>
+</div>
